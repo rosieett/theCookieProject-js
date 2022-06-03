@@ -90,4 +90,31 @@ var categories = [{
     },
 ]
 
+function displayNames() {
+    for (var i = 0; i < categories.length; i++) {
+        console.log(`Name: ${categories[i].name}`)
+    }
+}
 
+function displayDescription() {
+    for (var i = 0; i < categories.length; i++) {
+        console.log(`Description: ${categories[i].description}`)
+    }
+}
+
+function displayOptions() {
+    // for (var i = 0; i < categories.length; i++) {
+
+    // }
+}
+
+
+
+// displayNames();
+// displayDescription();
+displayOptions();
+
+console.log(categories[0])
+console.log(categories[0].options)
+console.log(categories[0].options[0])
+console.log(categories[0].options[0].label)
