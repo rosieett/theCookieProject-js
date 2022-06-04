@@ -1,4 +1,13 @@
+Version 2 - Sat Jun 4
+[x] it should have a button to display cateogory names
+[x] it should have a button to display descriptions
+[x] it should have a button to display options
+[x] it should display each of the category names
+[x] it should display the descriptions in under each of the names
+[x] it should load the options under the descriptions
+
+
 Version 1 - Fri Jun 3
 [x] It should have a function to show the cateogory names
 [x] it should have a function to show the descriptions
-[] it should have a function to show the options
+[x] it should have a function to show the options

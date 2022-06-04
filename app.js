@@ -90,31 +90,69 @@ var categories = [{
     },
 ]
 
-function displayNames() {
-    for (var i = 0; i < categories.length; i++) {
-        console.log(`Name: ${categories[i].name}`)
+var main = document.getElementById('main');
+
+
+function displayContent() {
+    for (let i = 0; i < categories.length; i++) {
+        // console.log(`Name: ${categories[i].name}`);
+
+        var listOfNames = categories[i].name;
+        var listOfDescriptions = categories[i].description;
+        var listOfOptions = categories[i].options;
+        // console.log(listOfOptions)
+
+        nameDiv = `<h3>${listOfNames}</h3>`
+        descriptionDiv = `<h5>${listOfDescriptions}</h5>`
+
+        main.innerHTML += nameDiv
+        main.innerHTML += descriptionDiv
+
+        for (let j = 0; j < listOfOptions.length; j++) {
+
+            var listofLabels = listOfOptions[j].label;
+            // console.log(listofLabels)
+            labelsDiv = `<h6>${listofLabels}</h6>`
+            main.innerHTML += labelsDiv
+        }
     }
+
+
+
 }
 
-function displayDescription() {
-    for (var i = 0; i < categories.length; i++) {
-        console.log(`Description: ${categories[i].description}`)
-    }
-}
+// let listOfOptions = categories[1].options[0];
+// console.log(listOfOptions)
+// for (let i = 0; i < listOfOptions.length; i++) {
+//     console.log(listOfOptions[i])
+// }
 
-function displayOptions() {
-    // for (var i = 0; i < categories.length; i++) {
+// function displayDescription() {
+//     for (let i = 0; i < categories.length; i++) {
+//         console.log(`Description: ${categories[i].description}`)
+//     }
+// }
 
-    // }
-}
+// function displayOptions() {
+//     for (let i = 0; i < categories.length; i++) {
 
+//         optionList = categories[i]['options'];
 
+//         for (let j = 0; j < optionList.length; j++) {
+//             console.log(`Option Labels: ${optionList[j].label}`)
+//         }
+//     }
+// }
 
-// displayNames();
+// var displayNamesButton = document.getElementById('names');
+// displayNamesButton.addEventListener('click', displayNames);
+
+// var displayDescriptionsButton = document.getElementById('descriptions');
+// displayDescriptionsButton.addEventListener('click', displayDescription);
+
+// var displayOptionsButton = document.getElementById('options');
+// displayOptionsButton.addEventListener('click', displayOptions);
+
+displayContent();
 // displayDescription();
-displayOptions();
-
-console.log(categories[0])
-console.log(categories[0].options)
-console.log(categories[0].options[0])
-console.log(categories[0].options[0].label)
+// displayOptions();
