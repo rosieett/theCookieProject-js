@@ -1,4 +1,9 @@
-Version 2 - Sat Jun 4
+Version 3 - started on Wednesday June 8
+[x] It should have a toggle for each of the options
+[x] It should be able to untoggle
+[] the options should become buttons that activate the toggle function
+
+Version 2 - Sat June 4
 [x] it should have a button to display cateogory names
 [x] it should have a button to display descriptions
 [x] it should have a button to display options
@@ -7,7 +12,7 @@ Version 2 - Sat Jun 4
 [x] it should load the options under the descriptions
 
 
-Version 1 - Fri Jun 3
+Version 1 - Fri June 3
 [x] It should have a function to show the cateogory names
 [x] it should have a function to show the descriptions
 [x] it should have a function to show the options
