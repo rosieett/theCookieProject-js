@@ -119,61 +119,32 @@ function displayContent() {
         main.innerHTML += nameDiv
         main.innerHTML += descriptionDiv
 
-
         for (let j = 0; j < listOfOptions.length; j++) {
 
             var listofLabels = listOfOptions[j].label;
+            var idofLabels = listOfOptions[j].value;
             // console.log(listofLabels)
-            labelsDiv = `<h6>${listofLabels}</h6>`
-            main.innerHTML += labelsDiv
+            optionsButton = `<button id="myBtn">${listofLabels}</button>`
+            main.innerHTML += optionsButton
 
-            var listOfSelection = categories[i].options[j].selection;
-            // console.log(listOfSelection)
-
-            function toggle() {
-                if (listOfSelection === false) {
-                    listOfSelection = true;
-                } else {
-                    listOfSelection = false;
-                }
-            }
-
-            function untoggle() {
-                if (listOfSelection === true) {
-                    listOfSelection = false;
-                }
-            }
-            // toggle();
-            // untoggle();
-
-            console.log(listOfSelection)
-
-            // function toggleAll() {
-
-            //     var selectedOptions = 0;
-
-            //     for (var k = 0; k < listOfSelection.length; k++) {
-            //         if (listOfSelection === true) {
-            //             selectedOptions++;
-            //         }
-            //     }
-
-            //     // if (selectedOptions === todos.length) {
-            //     //     for (var i = 0; i < todos.length; i++) {
-            //     //         todos[i].completed = false;
-            //     //     }
-            //     // } else {
-            //     //     for (var i = 0; i < todos.length; i++) {
-            //     //         todos[i].completed = true;
-            //     //     }
-            //     // }
-
-            //     // displayTodos();
-            // }
         }
+
     }
 
+    console.log('working')
 }
+
+displayContent();
+
+// var selectedButton = document.getElementById('myBtn');
+// selectedButton.addEventListener('click', displayContent)
+// console.log(selectedButton)
+
+
+
+
+
+
 
 // let listOfOptions = categories[1].options[0];
 // console.log(listOfOptions)
@@ -207,6 +178,5 @@ function displayContent() {
 // var displayOptionsButton = document.getElementById('options');
 // displayOptionsButton.addEventListener('click', displayOptions);
 
-displayContent();
 // displayDescription();
 // displayOptions();

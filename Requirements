@@ -1,7 +1,11 @@
+Version 4
+[] it should have a toggle for the selected option
+[] it should store what's been selected into a value
+
 Version 3 - started on Wednesday June 8
 [x] It should have a toggle for each of the options
 [x] It should be able to untoggle
-[] the options should become buttons that activate the toggle function
+[x] each option should be a button with an id of that value
 
 Version 2 - Sat June 4
 [x] it should have a button to display cateogory names
