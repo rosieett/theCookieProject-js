@@ -31,7 +31,7 @@ var categories = [{
             {
                 label: 'Thin',
                 value: 'thin',
-                imgUrl: '../src/assets/images/Cookies-10.png',
+                imgUrl: '../src/assets/images/categorys-10.png',
                 selection: false
             },
         ],
@@ -105,36 +105,55 @@ var main = document.getElementById('main');
 
 
 function displayContent() {
+
     for (let i = 0; i < categories.length; i++) {
-        // console.log(`Name: ${categories[i].name}`);
 
-        var listOfNames = categories[i].name;
-        var listOfDescriptions = categories[i].description;
-        var listOfOptions = categories[i].options;
-        // console.log(listOfOptions
+        var names = categories[i].name;
+        var descriptions = categories[i].description;
+        var choices = categories[i].options;
 
-        nameDiv = `<h3>${listOfNames}</h3>`
-        descriptionDiv = `<h5>${listOfDescriptions}</h5>`
+        //div that holds each category
+        var category = document.createElement('div');
+        main.appendChild(category)
+        category.classList.add('category');
 
-        main.innerHTML += nameDiv
-        main.innerHTML += descriptionDiv
+        //name within the category div
+        var nameText = document.createElement('h3');
+        nameText.innerHTML = names;
+        category.appendChild(nameText);
+        nameText.classList.add('category-name')
 
-        for (let j = 0; j < listOfOptions.length; j++) {
+        //description below the name
+        var descriptionText = document.createElement('h4');
+        descriptionText.innerHTML = descriptions;
+        category.appendChild(descriptionText)
+        descriptionText.classList.add('category-description')
 
-            var listofLabels = listOfOptions[j].label;
-            var idofLabels = listOfOptions[j].value;
-            // console.log(listofLabels)
-            optionsButton = `<button id="myBtn">${listofLabels}</button>`
-            main.innerHTML += optionsButton
 
+        //div that holds the option buttons
+        var selection = document.createElement('div');
+        category.appendChild(selection);
+        selection.classList.add('category-selection');
+
+        function buttons() {
+            for (let j = 0; j < choices.length; j++) {
+                var listOfLabels = choices[j].label;
+
+                //buttons
+                var labelButton = document.createElement('button');
+                labelButton.innerHTML = listOfLabels;
+                selection.appendChild(labelButton);
+                labelButton.classList.add('category-button')
+            }
         }
-
+        buttons();
     }
-
-    console.log('working')
 }
 
+
+
 displayContent();
+// buttons();
 
 // var selectedButton = document.getElementById('myBtn');
 // selectedButton.addEventListener('click', displayContent)
@@ -146,10 +165,10 @@ displayContent();
 
 
 
-// let listOfOptions = categories[1].options[0];
-// console.log(listOfOptions)
-// for (let i = 0; i < listOfOptions.length; i++) {
-//     console.log(listOfOptions[i])
+// let options = categories[1].options[0];
+// console.log(options)
+// for (let i = 0; i < options.length; i++) {
+//     console.log(options[i])
 // }
 
 // function displayDescription() {

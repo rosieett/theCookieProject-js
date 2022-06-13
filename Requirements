@@ -1,6 +1,11 @@
-Version 4
-[] it should have a toggle for the selected option
-[] it should store what's been selected into a value
+Version 5
+[] Create a new function for toggle ability 
+[] It should have a function that toggles the selection from false to true
+[] If selection is true ==> change it to false
+
+
+Version 4 - Sun June 12
+[x] it should have html added through .appendChild and .innerHTML not bracket notation
 
 Version 3 - started on Wednesday June 8
 [x] It should have a toggle for each of the options
