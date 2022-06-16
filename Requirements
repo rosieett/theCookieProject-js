@@ -3,6 +3,9 @@ Version 5
 [] It should have a function that toggles the selection from false to true
 [] If selection is true ==> change it to false
 
+Version 4.5 - Weds June 15
+[] css: lay out the selection area
+[] css: set up styles for the classes I have thus far
 
 Version 4 - Sun June 12
 [x] it should have html added through .appendChild and .innerHTML not bracket notation

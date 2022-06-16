@@ -3,7 +3,7 @@ var categories = [{
         id: 'tenderness',
         description: 'Heirloom biodiesel quinoa mlkshk asymmetrical master cleanse affogato blog marfa chillwave semiotics gastropub',
         imgUrl: '',
-        options: [{
+        option: [{
                 label: 'Crunchy',
                 value: 'crunchy',
                 imgUrl: '',
@@ -22,7 +22,7 @@ var categories = [{
         id: 'rise',
         description: 'Offal waistcoat occupy humblebrag pinterest, pour-over food truck bitters.',
         imgUrl: '',
-        options: [{
+        option: [{
                 label: 'Thick',
                 value: 'thick',
                 imgUrl: '',
@@ -41,7 +41,7 @@ var categories = [{
         id: 'texture',
         description: 'Banjo flannel pour-over fixie twee humblebrag.',
         imgUrl: '',
-        options: [{
+        option: [{
                 label: 'Fudgy',
                 value: 'fudgy',
                 imgUrl: '',
@@ -60,7 +60,7 @@ var categories = [{
         id: 'chocolate',
         description: 'Mixtape edison bulb tattooed blog, brunch seitan live-edge plaid forage',
         imgUrl: '',
-        options: [{
+        option: [{
                 label: 'Small Chunks',
                 value: 'small',
                 imgUrl: '',
@@ -85,7 +85,7 @@ var categories = [{
         id: 'flavor',
         description: 'Sartorial single-origin coffee VHS green juice salvia.',
         imgUrl: '',
-        options: [{
+        option: [{
                 label: 'Dark, toffee',
                 value: 'dark',
                 imgUrl: '',
@@ -102,6 +102,7 @@ var categories = [{
 ]
 
 var main = document.getElementById('main');
+var row = document.getElementById('selectionRow')
 
 
 function displayContent() {
@@ -110,18 +111,20 @@ function displayContent() {
 
         var names = categories[i].name;
         var descriptions = categories[i].description;
-        var choices = categories[i].options;
+        var options = categories[i].option;
 
         //div that holds each category
         var category = document.createElement('div');
-        main.appendChild(category)
+        row.appendChild(category)
         category.classList.add('category');
+        category.classList.add('col-md-4')
 
         //name within the category div
         var nameText = document.createElement('h3');
         nameText.innerHTML = names;
         category.appendChild(nameText);
         nameText.classList.add('category-name')
+
 
         //description below the name
         var descriptionText = document.createElement('h4');
@@ -131,22 +134,39 @@ function displayContent() {
 
 
         //div that holds the option buttons
-        var selection = document.createElement('div');
-        category.appendChild(selection);
-        selection.classList.add('category-selection');
+        var optionButtons = document.createElement('div');
+        category.appendChild(optionButtons);
+        optionButtons.classList.add('category-selection');
 
         function buttons() {
-            for (let j = 0; j < choices.length; j++) {
-                var listOfLabels = choices[j].label;
+            for (let j = 0; j < options.length; j++) {
+                var listOfLabels = options[j].label;
 
                 //buttons
                 var labelButton = document.createElement('button');
                 labelButton.innerHTML = listOfLabels;
-                selection.appendChild(labelButton);
+                optionButtons.appendChild(labelButton);
                 labelButton.classList.add('category-button')
+
             }
         }
+
+        // function toggle() {
+        //     for (let k = 0; k < options.length; k++) {
+        //         var selectionLabel = options[k].selection;
+        //         console.log(selectionLabel)
+
+        //         if (selectionLabel === false) {
+        //             selectionLabel = true;
+        //         } else {
+        //             selectionLabel = false;
+        //         }
+        //     }
+        // }
         buttons();
+        // toggle();
+
+
     }
 }
 
