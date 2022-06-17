@@ -10,7 +10,7 @@ body {
 }
 
 .category {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 2%;
     /* display: flex; */
 }
@@ -24,4 +24,8 @@ body {
 .category-description {
     font-size: .75rem;
     font-weight: 500;
+}
+
+.active-button {
+    background-color: aqua;
 }

@@ -7,13 +7,13 @@ var categories = [{
                 label: 'Crunchy',
                 value: 'crunchy',
                 imgUrl: '',
-                selection: false
+                completed: false
             },
             {
                 label: 'Soft',
                 value: 'soft',
                 imgUrl: '',
-                selection: false
+                completed: false
             },
         ],
     },
@@ -26,13 +26,13 @@ var categories = [{
                 label: 'Thick',
                 value: 'thick',
                 imgUrl: '',
-                selection: false
+                completed: false
             },
             {
                 label: 'Thin',
                 value: 'thin',
                 imgUrl: '../src/assets/images/categorys-10.png',
-                selection: false
+                completed: false
             },
         ],
     },
@@ -45,13 +45,13 @@ var categories = [{
                 label: 'Fudgy',
                 value: 'fudgy',
                 imgUrl: '',
-                selection: false
+                completed: false
             },
             {
                 label: 'Cakey',
                 value: 'cakey',
                 imgUrl: '',
-                selection: false
+                completed: false
             },
         ],
     },
@@ -64,19 +64,19 @@ var categories = [{
                 label: 'Small Chunks',
                 value: 'small',
                 imgUrl: '',
-                selection: false
+                completed: false
             },
             {
                 label: 'Large Chunks',
                 value: 'large',
                 imgUrl: '',
-                selection: false
+                completed: false
             },
             {
                 label: 'Swirled In',
                 value: 'swirled',
                 imgUrl: '',
-                selection: false
+                completed: false
             },
         ],
     },
@@ -89,16 +89,16 @@ var categories = [{
                 label: 'Dark, toffee',
                 value: 'dark',
                 imgUrl: '',
-                selection: false
+                completed: false
             },
             {
                 label: 'Light, milky',
                 value: 'light',
                 imgUrl: '',
-                selection: true
+                completed: false
             },
         ],
-    },
+    }
 ]
 
 var main = document.getElementById('main');
@@ -138,84 +138,48 @@ function displayContent() {
         category.appendChild(optionButtons);
         optionButtons.classList.add('category-selection');
 
-        function buttons() {
-            for (let j = 0; j < options.length; j++) {
-                var listOfLabels = options[j].label;
+        //nested loop for option buttons
+        for (let j = 0; j < options.length; j++) {
 
-                //buttons
-                var labelButton = document.createElement('button');
-                labelButton.innerHTML = listOfLabels;
-                optionButtons.appendChild(labelButton);
-                labelButton.classList.add('category-button')
+            var labels = options[j].label;
+            var values = options[j].value;
+            // var selections = options[j].selection;
+            // console.log()
 
-            }
+            //buttons
+            var labelButton = document.createElement('button');
+            labelButton.innerHTML = labels;
+            optionButtons.appendChild(labelButton);
+            labelButton.classList.add('category-button');
+            labelButton.addEventListener('click', toggle);
+            // labelButton.id = j;
+
         }
+    };
 
-        // function toggle() {
-        //     for (let k = 0; k < options.length; k++) {
-        //         var selectionLabel = options[k].selection;
-        //         console.log(selectionLabel)
-
-        //         if (selectionLabel === false) {
-        //             selectionLabel = true;
-        //         } else {
-        //             selectionLabel = false;
-        //         }
-        //     }
-        // }
-        buttons();
-        // toggle();
-
-
-    }
 }
 
+function toggle() {
+    if (options[j].completed === true) {
+        labelButton.innerText = '[X] ' + options[j].label;
+    } else {
+        labelButton.innerText = '[ ] ' + options[j].label;
+    }
+    // var position = event.currentTarget.id;
+}
 
-
+toggle();
 displayContent();
-// buttons();
-
-// var selectedButton = document.getElementById('myBtn');
-// selectedButton.addEventListener('click', displayContent)
-// console.log(selectedButton)
 
 
+// function toggle(event) {
+//     var position = event.currentTarget.id;
+//     console.log(position, selections)
+//     // position = selections;
+//     // console.log(position)
 
+//     // position = true;
+//     // console.log(position)
+//     event.currentTarget.classList.add('active-button');
 
-
-
-
-// let options = categories[1].options[0];
-// console.log(options)
-// for (let i = 0; i < options.length; i++) {
-//     console.log(options[i])
 // }
-
-// function displayDescription() {
-//     for (let i = 0; i < categories.length; i++) {
-//         console.log(`Description: ${categories[i].description}`)
-//     }
-// }
-
-// function displayOptions() {
-//     for (let i = 0; i < categories.length; i++) {
-
-//         optionList = categories[i]['options'];
-
-//         for (let j = 0; j < optionList.length; j++) {
-//             console.log(`Option Labels: ${optionList[j].label}`)
-//         }
-//     }
-// }
-
-// var displayNamesButton = document.getElementById('names');
-// displayNamesButton.addEventListener('click', displayNames);
-
-// var displayDescriptionsButton = document.getElementById('descriptions');
-// displayDescriptionsButton.addEventListener('click', displayDescription);
-
-// var displayOptionsButton = document.getElementById('options');
-// displayOptionsButton.addEventListener('click', displayOptions);
-
-// displayDescription();
-// displayOptions();
