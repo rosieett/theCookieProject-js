@@ -1,11 +1,14 @@
-Version 5
-[] Create a new function for toggle ability 
-[] It should have a function that toggles the selection from false to true
-[] If selection is true ==> change it to false
+Version 6 
+[] it should have a way to show what's been selected
+
+Version 5 - by Sun June 19
+[x] Create a new function for toggle ability 
+[x] It should have a function that toggles the selection from false to true
+[x] If selection is true ==> change it to false
 
 Version 4.5 - Weds June 15
-[] css: lay out the selection area
-[] css: set up styles for the classes I have thus far
+[x] css: lay out the selection area
+[x] css: set up styles for the classes I have thus far
 
 Version 4 - Sun June 12
 [x] it should have html added through .appendChild and .innerHTML not bracket notation

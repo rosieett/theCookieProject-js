@@ -7,13 +7,13 @@ var categories = [{
                 label: 'Crunchy',
                 value: 'crunchy',
                 imgUrl: '',
-                completed: false
+                selection: false
             },
             {
                 label: 'Soft',
                 value: 'soft',
                 imgUrl: '',
-                completed: false
+                selection: false
             },
         ],
     },
@@ -26,13 +26,13 @@ var categories = [{
                 label: 'Thick',
                 value: 'thick',
                 imgUrl: '',
-                completed: false
+                selection: false
             },
             {
                 label: 'Thin',
                 value: 'thin',
                 imgUrl: '../src/assets/images/categorys-10.png',
-                completed: false
+                selection: false
             },
         ],
     },
@@ -45,13 +45,13 @@ var categories = [{
                 label: 'Fudgy',
                 value: 'fudgy',
                 imgUrl: '',
-                completed: false
+                selection: false
             },
             {
                 label: 'Cakey',
                 value: 'cakey',
                 imgUrl: '',
-                completed: false
+                selection: false
             },
         ],
     },
@@ -64,19 +64,19 @@ var categories = [{
                 label: 'Small Chunks',
                 value: 'small',
                 imgUrl: '',
-                completed: false
+                selection: false
             },
             {
                 label: 'Large Chunks',
                 value: 'large',
                 imgUrl: '',
-                completed: false
+                selection: false
             },
             {
                 label: 'Swirled In',
                 value: 'swirled',
                 imgUrl: '',
-                completed: false
+                selection: false
             },
         ],
     },
@@ -89,13 +89,13 @@ var categories = [{
                 label: 'Dark, toffee',
                 value: 'dark',
                 imgUrl: '',
-                completed: false
+                selection: false
             },
             {
                 label: 'Light, milky',
                 value: 'light',
                 imgUrl: '',
-                completed: false
+                selection: false
             },
         ],
     }
@@ -106,7 +106,6 @@ var row = document.getElementById('selectionRow')
 
 
 function displayContent() {
-
     for (let i = 0; i < categories.length; i++) {
 
         var names = categories[i].name;
@@ -143,7 +142,7 @@ function displayContent() {
 
             var labels = options[j].label;
             var values = options[j].value;
-            // var selections = options[j].selection;
+            var selections = options[j].selection;
             // console.log()
 
             //buttons
@@ -152,34 +151,35 @@ function displayContent() {
             optionButtons.appendChild(labelButton);
             labelButton.classList.add('category-button');
             labelButton.addEventListener('click', toggle);
-            // labelButton.id = j;
 
+            labelButton.id = values;
         }
-    };
 
-}
-
-function toggle() {
-    if (options[j].completed === true) {
-        labelButton.innerText = '[X] ' + options[j].label;
-    } else {
-        labelButton.innerText = '[ ] ' + options[j].label;
     }
-    // var position = event.currentTarget.id;
 }
 
-toggle();
-displayContent();
+
+function toggle(event) {
+    var selectedButton = event.currentTarget;
+    var choicefromButton = event.currentTarget.id;
+    console.log(choicefromButton)
+    var buttonActive = selectedButton.classList.contains('active-button');
+    var choices = '';
+    if (buttonActive === false) {
+        selectedButton.classList.add('active-button');
+        choices += choicefromButton;
+        console.log('choices array: ' + choices)
+    } else {
+        selectedButton.classList.remove('active-button')
+    }
 
 
+}
+
+
+//also works:
 // function toggle(event) {
-//     var position = event.currentTarget.id;
-//     console.log(position, selections)
-//     // position = selections;
-//     // console.log(position)
-
-//     // position = true;
-//     // console.log(position)
-//     event.currentTarget.classList.add('active-button');
-
+//     event.currentTarget.classList.toggle('active-button');
 // }
+
+displayContent()
