@@ -7,13 +7,11 @@ var categories = [{
                 label: 'Crunchy',
                 value: 'crunchy',
                 imgUrl: '',
-                selection: false
             },
             {
                 label: 'Soft',
                 value: 'soft',
                 imgUrl: '',
-                selection: false
             },
         ],
     },
@@ -26,13 +24,11 @@ var categories = [{
                 label: 'Thick',
                 value: 'thick',
                 imgUrl: '',
-                selection: false
             },
             {
                 label: 'Thin',
                 value: 'thin',
                 imgUrl: '../src/assets/images/categorys-10.png',
-                selection: false
             },
         ],
     },
@@ -45,13 +41,11 @@ var categories = [{
                 label: 'Fudgy',
                 value: 'fudgy',
                 imgUrl: '',
-                selection: false
             },
             {
                 label: 'Cakey',
                 value: 'cakey',
                 imgUrl: '',
-                selection: false
             },
         ],
     },
@@ -64,19 +58,16 @@ var categories = [{
                 label: 'Small Chunks',
                 value: 'small',
                 imgUrl: '',
-                selection: false
             },
             {
                 label: 'Large Chunks',
                 value: 'large',
                 imgUrl: '',
-                selection: false
             },
             {
                 label: 'Swirled In',
                 value: 'swirled',
                 imgUrl: '',
-                selection: false
             },
         ],
     },
@@ -89,13 +80,11 @@ var categories = [{
                 label: 'Dark, toffee',
                 value: 'dark',
                 imgUrl: '',
-                selection: false
             },
             {
                 label: 'Light, milky',
                 value: 'light',
                 imgUrl: '',
-                selection: false
             },
         ],
     }
@@ -103,6 +92,7 @@ var categories = [{
 
 var main = document.getElementById('main');
 var row = document.getElementById('selectionRow')
+var choices = [];
 
 
 function displayContent() {
@@ -142,7 +132,6 @@ function displayContent() {
 
             var labels = options[j].label;
             var values = options[j].value;
-            var selections = options[j].selection;
             // console.log()
 
             //buttons
@@ -151,8 +140,7 @@ function displayContent() {
             optionButtons.appendChild(labelButton);
             labelButton.classList.add('category-button');
             labelButton.addEventListener('click', toggle);
-
-            labelButton.id = values;
+            labelButton.id = labels;
         }
 
     }
@@ -160,26 +148,53 @@ function displayContent() {
 
 
 function toggle(event) {
+
+    //creating a variable from what's currently clicked
     var selectedButton = event.currentTarget;
-    var choicefromButton = event.currentTarget.id;
-    console.log(choicefromButton)
+
+    //add a class to the buttons that are selected
     var buttonActive = selectedButton.classList.contains('active-button');
-    var choices = '';
+
+    var showSelected = document.getElementById('list-content');
+
+    //if a button isn't active
     if (buttonActive === false) {
+
+        //add the active button class
         selectedButton.classList.add('active-button');
-        choices += choicefromButton;
-        console.log('choices array: ' + choices)
+
+        //push the id of the selected button to choices
+        choices.push(selectedButton.id);
+
+
+        //if it's been selected
     } else {
+        //remove the class
         selectedButton.classList.remove('active-button')
+
+        //count how many are currently selected
+        var idx = choices.indexOf(selectedButton.id)
+
+        if (idx > -1) { // only splice array when item is found
+            choices.splice(idx, 1); // 2nd parameter means remove one item only
+        }
+
+        console.log(idx)
     }
 
+    if (!showSelected) {
+        console.log(showSelected)
+        showSelected = document.createElement('p')
+        showSelected.setAttribute("id", 'list-content')
+        showSelected.innerHTML = choices;
+        main.append(showSelected)
+    } else {
+        showSelected.innerHTML = choices;
+    }
+
+    console.log(choices)
 
 }
 
 
-//also works:
-// function toggle(event) {
-//     event.currentTarget.classList.toggle('active-button');
-// }
-
-displayContent()
+displayContent();
