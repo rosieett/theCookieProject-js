@@ -4,14 +4,14 @@ var categories = [{
         description: 'Heirloom biodiesel quinoa mlkshk asymmetrical master cleanse affogato blog marfa chillwave semiotics gastropub',
         imgUrl: '',
         option: [{
-                label: 'Crunchy',
-                value: 'crunchy',
-                imgUrl: '',
+                label: 'Crispy',
+                value: 'crispy',
+                imgUrl: 'cookies/cookies_crispy.png'
             },
             {
-                label: 'Soft',
-                value: 'soft',
-                imgUrl: '',
+                label: 'Chewy',
+                value: 'chewy',
+                imgUrl: 'cookies/cookies_chewy.png',
             },
         ],
     },
@@ -23,12 +23,12 @@ var categories = [{
         option: [{
                 label: 'Thick',
                 value: 'thick',
-                imgUrl: '',
+                imgUrl: 'cookies/cookies_thick.png',
             },
             {
                 label: 'Thin',
                 value: 'thin',
-                imgUrl: '../src/assets/images/categorys-10.png',
+                imgUrl: 'cookies/cookies_thin.png'
             },
         ],
     },
@@ -40,12 +40,12 @@ var categories = [{
         option: [{
                 label: 'Fudgy',
                 value: 'fudgy',
-                imgUrl: '',
+                imgUrl: 'cookies/cookies_fudgy.png'
             },
             {
                 label: 'Cakey',
                 value: 'cakey',
-                imgUrl: '',
+                imgUrl: 'cookies/cookies_cakey.png'
             },
         ],
     },
@@ -57,17 +57,17 @@ var categories = [{
         option: [{
                 label: 'Small Chunks',
                 value: 'small',
-                imgUrl: '',
+                imgUrl: 'cookies/cookies_chips.png'
             },
             {
                 label: 'Large Chunks',
                 value: 'large',
-                imgUrl: '',
+                imgUrl: 'cookies/cookies_thick.png'
             },
             {
                 label: 'Swirled In',
                 value: 'swirled',
-                imgUrl: '',
+                imgUrl: 'cookies/cookies_swirl.png'
             },
         ],
     },
@@ -79,12 +79,12 @@ var categories = [{
         option: [{
                 label: 'Dark, toffee',
                 value: 'dark',
-                imgUrl: '',
+                imgUrl: 'cookies/cookies_dark.png'
             },
             {
                 label: 'Light, milky',
                 value: 'light',
-                imgUrl: '',
+                imgUrl: 'cookies/cookies_light.png'
             },
         ],
     }
