@@ -153,7 +153,7 @@ function displayContent() {
         }
 
 
-
+        console.log(imageDiv)
 
     }
 }
