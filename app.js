@@ -62,7 +62,7 @@ var categories = [{
             {
                 label: 'Large Chunks',
                 value: 'large',
-                imgUrl: 'cookies/cookies_thick.png'
+                imgUrl: 'cookies/cookies_chunky.png'
             },
             {
                 label: 'Swirled In',
@@ -132,6 +132,8 @@ function displayContent() {
 
             var labels = options[j].label;
             var values = options[j].value;
+            var images = options[j].imgUrl;
+
             // console.log()
 
             //buttons
@@ -141,7 +143,17 @@ function displayContent() {
             labelButton.classList.add('category-button');
             labelButton.addEventListener('click', toggle);
             labelButton.id = labels;
+
+            var imageDiv = document.createElement('div')
+            var content = imageDiv.innerHTML = '"' + images + '"';
+            var size = 'width="100%" height="125"'
+            content = '<img src=' + content + size + '>';
+            imageDiv.innerHTML = content;
+            labelButton.appendChild(imageDiv)
         }
+
+
+
 
     }
 }

@@ -37,4 +37,5 @@ ehthumbs.db
 Thumbs.db
 *.ai
 
-/ignore
+.vscode
+cookies.ai
