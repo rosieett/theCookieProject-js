@@ -106,7 +106,8 @@ function displayContent() {
         var category = document.createElement('div');
         row.appendChild(category)
         category.classList.add('category');
-        category.classList.add('col-md-4')
+        category.classList.add('col-lg-3');
+        // category.classList.add('col-md-4');
 
         //name within the category div
         var nameText = document.createElement('h3');
