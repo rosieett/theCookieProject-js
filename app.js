@@ -152,9 +152,6 @@ function displayContent() {
             labelButton.appendChild(imageDiv)
         }
 
-
-        console.log(imageDiv)
-
     }
 }
 
