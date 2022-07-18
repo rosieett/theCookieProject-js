@@ -1,8 +1,5 @@
 var categories = [{
-        name: 'Tenderness',
-        id: 'tenderness',
-        description: 'Heirloom biodiesel quinoa mlkshk asymmetrical master cleanse affogato blog marfa chillwave semiotics gastropub',
-        imgUrl: '',
+        question: 'What\'s your preferred cookie texture?',
         option: [{
                 label: 'Crispy',
                 value: 'crispy',
@@ -16,10 +13,7 @@ var categories = [{
         ],
     },
     {
-        name: 'Rise',
-        id: 'rise',
-        description: 'Offal waistcoat occupy humblebrag pinterest, pour-over food truck bitters.',
-        imgUrl: '',
+        question: 'What\'s your preferred cookie height?',
         option: [{
                 label: 'Thick',
                 value: 'thick',
@@ -33,10 +27,7 @@ var categories = [{
         ],
     },
     {
-        name: 'Texture',
-        id: 'texture',
-        description: 'Banjo flannel pour-over fixie twee humblebrag.',
-        imgUrl: '',
+        question: 'What\'s your preferred cookie consistency?',
         option: [{
                 label: 'Fudgy',
                 value: 'fudgy',
@@ -50,10 +41,7 @@ var categories = [{
         ],
     },
     {
-        name: 'Chocolate',
-        id: 'chocolate',
-        description: 'Mixtape edison bulb tattooed blog, brunch seitan live-edge plaid forage',
-        imgUrl: '',
+        question: 'What\'s your preferred chocolate for your chocolate chip cookie?',
         option: [{
                 label: 'Small Chunks',
                 value: 'small',
@@ -72,10 +60,7 @@ var categories = [{
         ],
     },
     {
-        name: 'Flavor',
-        id: 'flavor',
-        description: 'Sartorial single-origin coffee VHS green juice salvia.',
-        imgUrl: '',
+        question: 'What\'s your preferred cookie flavor?',
         option: [{
                 label: 'Dark, toffee',
                 value: 'dark',
@@ -98,7 +83,7 @@ var choices = [];
 function displayContent() {
     for (let i = 0; i < categories.length; i++) {
 
-        var names = categories[i].name;
+        var questions = categories[i].question;
         var descriptions = categories[i].description;
         var options = categories[i].option;
 
@@ -110,17 +95,17 @@ function displayContent() {
         // category.classList.add('col-md-4');
 
         //name within the category div
-        var nameText = document.createElement('h3');
-        nameText.innerHTML = names;
-        category.appendChild(nameText);
-        nameText.classList.add('category-name')
+        var questionText = document.createElement('h3');
+        questionText.innerHTML = questions;
+        category.appendChild(questionText);
+        questionText.classList.add('category-name')
 
 
         //description below the name
-        var descriptionText = document.createElement('h4');
-        descriptionText.innerHTML = descriptions;
-        category.appendChild(descriptionText)
-        descriptionText.classList.add('category-description')
+        // var descriptionText = document.createElement('h4');
+        // descriptionText.innerHTML = descriptions;
+        // category.appendChild(descriptionText)
+        // descriptionText.classList.add('category-description')
 
 
         //div that holds the option buttons
