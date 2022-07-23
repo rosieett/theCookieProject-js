@@ -36,6 +36,7 @@
 ehthumbs.db
 Thumbs.db
 *.ai
+/old
 
 .vscode
 cookies.ai
