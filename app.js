@@ -86,11 +86,9 @@ var questions = [{
     }
 ]
 
-// var main = document.getElementById('main');
-// var row = document.getElementById('selectionRow')
-// var choices = [];
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
+const submitButton = document.getElementById('submit-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
@@ -101,10 +99,6 @@ startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
     setNextQuestion();
-    if (currentQuestionIndex === 4) {
-        console.log('ok now')
-    }
-
 })
 
 //start the game
@@ -134,16 +128,11 @@ function showQuestion(question) {
         image.src = answer.imgUrl
 
         button.classList.add('btn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
         button.addEventListener('click', selectAnswer)
 
         answerButtonsElement.appendChild(buttonDiv)
         buttonDiv.appendChild(button)
         buttonDiv.appendChild(image)
-
-
     })
 }
 
@@ -162,8 +151,7 @@ function selectAnswer(e) {
     const correct = selectedButton.dataset.correct
     console.log(correct)
     const selectedlabel = selectedButton.dataset.innerHTML
-
-
+    console.log(selectedlabel)
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
@@ -171,20 +159,18 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
-        startButton.innerText = 'Restart';
-        //ADD IN SHOW ANSWERS HERE
-        startButton.classList.remove('hide')
+        submitButton.classList.remove('hide')
+        submitButton.addEventListener('click', showAnswers)
     }
 }
 
-//clearig the status class
-function setStatusClass(element, correct) {
+function showAnswers() {
+    window.location.href = 'http://www.rosieettenheim.com'
+}
+
+// clearig the status class
+function setStatusClass(element) {
     clearStatusClass(element)
-    if (correct) {
-        element.classList.add('correct')
-    } else {
-        element.classList.add('wrong')
-    }
 }
 
 function clearStatusClass(element) {
